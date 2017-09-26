@@ -8,7 +8,7 @@ Avalon+JSON is a pragmatic hypermedia specification designed to enable task-base
 
 ## Media Type
 
-The media type for Avalon+JSON is application/vnd.avalon+json (pending).
+The media type for Avalon+JSON is application/vnd.avalon+json ([registered](https://www.iana.org/assignments/media-types/application/vnd.avalon+json)).
 
 ## Language
 
