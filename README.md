@@ -107,6 +107,27 @@ An array of [Form](#form)s. OPTIONAL.
                             "name": "summary",
                             "displayName": "Summary",
                             "type": "text"
+                        },
+                        {
+                            "name": "isResolved",
+                            "displayName": "Is Resolved?",
+                            "type": "checkbox",
+                            "value": false
+                        },
+                        {
+                            "name": "resolution",
+                            "displayName": "Resolution",
+                            "type": "text",
+                            "isVisiblePredicate": {
+                                "var": [
+                                    "isResolved"
+                                ]
+                            },
+                            "isRequiredPredicate": {
+                                "var": [
+                                    "isResolved"
+                                ]
+                            }
                         }
                     ]
                 }
@@ -397,6 +418,14 @@ The display (i.e. human-readable) name of the field. OPTIONAL.
 `type`
 
 The implementation-specific type of the field. Implementers SHOULD document the available field types and default value. OPTIONAL. SHOULD be the default value when omitted.
+
+`isVisiblePredicate`
+
+A [JsonLogic](http://jsonlogic.com) expression that specifies whether or not the field is visible based on the values of the other fields in the form (using the `var` operator). The field is visible if the `isVisiblePredicate` expression evaluates to `true` or the `isVisiblePredicate` property is undefined. OPTIONAL.
+
+`isRequiredPredicate`
+
+A [JsonLogic](http://jsonlogic.com) expression that specifies whether or not the field is required based on the values of the other fields in the form (using the `var` operator). The field is required if the `isRequiredPredicate` expression evaluates to `true`. The field is not required if the `isRequiredPredicate` property is undefined. OPTIONAL.
 
 `value`
 
